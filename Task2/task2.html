@@ -15,7 +15,6 @@
 </head>
 <body>
     <script>
-        //Initial Student Data
         let students = [
           {id:1, name:"Naveen", mark:85, course:"MERN"},
           {id:2, name:"John", mark:45, course:"Python"},
@@ -23,14 +22,12 @@
           {id:4, name:"Arun", mark:95, course:"React"}
         ];
 
-        // ---Task 1: Print All Students---
         console.log("--- Task 1: Print All Students ---");
         for (let i = 0; i < students.length; i++) {
           let s = students[i];
           console.log(`${s.id} ${s.name} ${s.mark} ${s.course}`);
         }
 
-        // ---Task 2: Pass / Fail---
         console.log("\n--- Task 2: Pass / Fail ---");
         for (let i = 0; i < students.length; i++) {
           let s = students[i];
@@ -38,7 +35,6 @@
           console.log(`${s.name} - ${status}`);
         }
 
-        // ---Task 3: Grade System---
         console.log("\n--- Task 3: Grade System ---");
         for (let i = 0; i < students.length; i++) {
           let s = students[i];
@@ -57,17 +53,15 @@
           console.log(`${s.name} - ${grade}`);
         }
 
-        // ---Task 4: Topper Student---
         console.log("\n--- Task 4: Topper Student ---");
-        let topper = students[0]; // Assume the first student is the topper to start
+        let topper = students[0];
         for (let i = 1; i < students.length; i++) {
           if (students[i].mark > topper.mark) {
-            topper = students[i]; // Update if we find a higher mark
+            topper = students[i];
           }
         }
         console.log(`Topper is ${topper.name} - ${topper.mark}`);
 
-        // ---Task 5: Course Search---
         console.log("\n--- Task 5: Course Search ---");
         for (let i = 0; i < students.length; i++) {
           if (students[i].course === "React") {
@@ -75,12 +69,10 @@
           }
         }
 
-        // ---Task 6: Add New Student---
         console.log("\n--- Task 6: Add New Student ---");
         students.push({id:5, name:"Rahul", mark:88, course:"Node JS"});
         console.log("Updated Student List:", students); 
 
-        // ---Task 7: Attendance System---
         console.log("\n--- Task 7: Attendance System ---");
         let attendanceStatus = "present";
 
@@ -98,7 +90,6 @@
             console.log("Invalid Status");
         }
 
-        // ---Task 8: Login System---
         console.log("\n--- Task 8: Login System ---");
         let username = "admin";
         let password = "1234";
