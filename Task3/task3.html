@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaji's Advanced JS Tasks</title>
+    <link rel="icon" href="data:,"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Balaji's JS Tasks are Running! 🚀</h1>
+    <p>Right-click this page, select <strong>Inspect</strong>, and open the <strong>Console</strong> tab to see your personalized output.</p>
+
+    <script>
+        console.log("--- Task 1: Student Form Function ---");
+        function studentForm(name, age, course) {
+            console.log(`Name: ${name}`);
+            console.log(`Age: ${age}`);
+            console.log(`Course: ${course}`);
+        }
+        studentForm("Balaji Sivakumar", 22, "Electronics and Communication Engineering");
+
+        console.log("\n--- Task 2: Calculator Function ---");
+        function calc(a, b) {
+            console.log(`Addition: ${a + b}`);
+            console.log(`Subtraction: ${a - b}`);
+            console.log(`Multiplication: ${a * b}`);
+        }
+        calc(10, 5);
+
+        console.log("\n--- Task 3: Reusable Greeting ---");
+        function greetUser(name) {
+            console.log(`Hello ${name}`);
+        }
+        greetUser("Kamal");
+        greetUser("Praveen");
+        greetUser("Sai");
+
+        console.log("\n--- Task 4: Return Value ---");
+        function square(num) {
+            return num * num;
+        }
+        console.log(square(5)); // Prints 25
+
+        console.log("\n--- Task 5: Scope Check ---");
+        function scopeTest() {
+            let secret = "javascript";
+        }
+        scopeTest();
+        try {
+            console.log(secret); 
+        } catch (error) {
+            console.log("Error caught:", error.message);
+            console.log("Explanation: 'secret' cannot be accessed outside its function block.");
+        }
+
+        console.log("\n--- Task 6: Merge Arrays ---");
+        let backend = ["Python", "SQL"]; // Skills from resume [cite: 10, 14]
+        let frontend = ["HTML", "CSS"];  // Skills from resume 
+        let mySkills = [...backend, ...frontend]; 
+        console.log(mySkills);
+
+        console.log("\n--- Task 7: Unlimited Numbers ---");
+        function sumAll(...nums) { 
+            let sum = 0;
+            for (let num of nums) {
+                sum += num;
+            }
+            console.log(sum);
+        }
+        sumAll(10, 20, 30, 40);
+
+        console.log("\n--- Task 8: Array Destructuring ---");
+        let colors = ["red", "green", "blue"];
+        let [c1, c2, c3] = colors;
+        console.log(c1, c2, c3);
+
+        console.log("\n--- Task 9: Object Destructuring ---");
+        let emp = {
+            name: "Balaji Sivakumar",
+            role: "Software Engineer",
+            salary: "5LPA"
+        };
+        let { name, role } = emp;
+        console.log(`${name} - ${role}`);
+
+        console.log("\n--- Task 10: Offer Generator ---");
+        function* offerGenerator() {
+            yield "10% cashback";
+            yield "20% cashback";
+            yield "50% cashback";
+            yield "Try again";
+        }
+        const myOffer = offerGenerator();
+        console.log(myOffer.next().value);
+        console.log(myOffer.next().value);
+        console.log(myOffer.next().value);
+        console.log(myOffer.next().value);
+        console.log(myOffer.next().value || "No more offers"); 
+
+        console.log("\n--- Task 11: Curry Function ---");
+        function add(a) {
+            return function(b) {
+                return function(c) {
+                    return a + b + c;
+                };
+            };
+        }
+        console.log(add(10)(20)(30));
+
+        console.log("\n--- Task 12: Student Marks Analyzer ---");
+        function marks(...nums) {
+            let total = 0;
+            for(let num of nums) {
+                total += num;
+            }
+            console.log(`Total = ${total}`);
+            console.log(`Average = ${total / nums.length}`);
+        }
+        marks(80, 90, 70, 60);
+
+        console.log("\n--- Challenge Task: Registration System ---");
+        function register(empName, empRole, ...skills) {
+            console.log(`Name: ${empName}`);
+            console.log(`Role: ${empRole}`);
+            console.log(`Skills: ${skills.join(" ")}`); 
+        }
+        register("Balaji Sivakumar", "Software Engineer", "Python", "SQL", "Power BI", "HTML", "CSS", "AWS");
+
+    </script>
+</body>
+</html>
