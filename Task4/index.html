@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Mastery Tasks</title>
+    <link rel="icon" href="data:,"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Array & Logic Tasks are Running! 🚀</h1>
+    <p>Right-click this page, select <strong>Inspect</strong>, and open the <strong>Console</strong> tab to see the outputs.</p>
+
+    <script>
+        console.log("--- 🔹 Task 1: Array Basics ---");
+        {
+            let arr = [10, 20, 30, 40, 50];
+            console.log("First element:", arr[0]);
+            console.log("Last element:", arr[arr.length - 1]);
+            console.log("Total length:", arr.length);
+        }
+
+        console.log("\n--- 🔹 Task 2: Push & Pop ---");
+        {
+            let arr = [1, 2, 3];
+            arr.push(4, 5); 
+            arr.pop(); 
+            console.log(arr); // Output: [1, 2, 3, 4]
+        }
+
+        console.log("\n--- 🔹 Task 3: Includes Check ---");
+        {
+            let arr = ["html", "css", "javascript", "react"];
+            console.log(arr.includes("javascript")); // Output: true
+        }
+        console.log("\n--- 🔹 Task 4: Filter Salaries ---");
+        {
+            let emp = [
+                {name: "A", salary: 10000},
+                {name: "B", salary: 50000},
+                {name: "C", salary: 30000}
+            ];
+            let highEarners = emp.filter(e => e.salary > 20000);
+            console.log(highEarners);
+        }
+
+        console.log("\n--- 🔹 Task 5: Map Names ---");
+        {
+            let emp = [
+                {name: "A", salary: 10000},
+                {name: "B", salary: 50000},
+                {name: "C", salary: 30000}
+            ];
+            let names = emp.map(e => e.name);
+            console.log(names); // Output: ["A", "B", "C"]
+        }
+
+        console.log("\n--- 🔹 Task 6: Reduce Sum ---");
+        {
+            let emp = [
+                {name: "A", salary: 10000},
+                {name: "B", salary: 50000},
+                {name: "C", salary: 30000}
+            ];
+            let totalSalary = emp.reduce((sum, e) => sum + e.salary, 0);
+            console.log("Total Salary:", totalSalary); // Output: 90000
+        }
+        console.log("\n--- 🔹 Task 7: Remove Duplicates ---");
+        {
+            let arr = [1, 2, 2, 3, 4, 4, 5];
+            let uniqueArr = [...new Set(arr)];
+            console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
+        }
+
+        console.log("\n--- 🔹 Task 8: Find Largest Number ---");
+        {
+            let arr = [10, 200, 5, 90];
+            let max = Math.max(...arr);
+            console.log(max); // Output: 200
+        }
+
+        console.log("\n--- 🔹 Task 9: Reverse String WITHOUT reverse() ---");
+        {
+            let str = "hello";
+            let reversed = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversed += str[i];
+            }
+            console.log(reversed); // Output: "olleh"
+        }
+
+        console.log("\n--- 🔹 Task 10: Group by Salary ---");
+        {
+            let emp = [
+                {name: "A", salary: 10000},
+                {name: "B", salary: 50000},
+                {name: "C", salary: 10000}
+            ];
+            let grouped = emp.reduce((acc, curr) => {
+                if (!acc[curr.salary]) {
+                    acc[curr.salary] = [];
+                }
+                acc[curr.salary].push(curr.name);
+                return acc;
+            }, {});
+            console.log(grouped); 
+            // Output: { '10000': ['A', 'C'], '50000': ['B'] }
+        }
+
+        console.log("\n--- 🔹 Task 11: Flatten Array (without flat) ---");
+        {
+            let arr = [1, [2, [3, [4]]]];
+            function customFlatten(arr) {
+                return arr.reduce((acc, val) => {
+                    return Array.isArray(val) ? acc.concat(customFlatten(val)) : acc.concat(val);
+                }, []);
+            }
+            console.log(customFlatten(arr)); // Output: [1, 2, 3, 4]
+        }
+
+        console.log("\n--- 🔹 Task 12: Custom Sort (Descending) ---");
+        {
+            let arr = [5, 2, 9, 1];
+            arr.sort((a, b) => b - a);
+            console.log(arr);
+        }
+        console.log("\n--- 🔹 Task 13: Find Second Largest ---");
+        {
+            let arr = [10, 50, 20, 40, 50];
+            let secondLargest = [...new Set(arr)].sort((a, b) => b - a)[1];
+            console.log(secondLargest); // Output: 40
+        }
+
+        console.log("\n--- 🔹 Task 14: Count Characters ---");
+        {
+            let str = "aabbccdde";
+            let charCount = str.split('').reduce((acc, char) => {
+                acc[char] = (acc[char] || 0) + 1;
+                return acc;
+            }, {});
+            console.log(charCount); 
+            // Output: { a: 2, b: 2, c: 2, d: 2, e: 1 }
+        }
+    </script>
+</body>
+</html>
